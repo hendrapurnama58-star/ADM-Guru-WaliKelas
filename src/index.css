@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-serif: 'Source Serif 4', Georgia, serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #0f172a;
+    background-color: #f8fafc;
+  }
+}
+
+.font-serif-doc {
+  font-family: var(--font-serif);
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom A4 Document Sheet Styling on Screen */
+.a4-sheet {
+  background: #ffffff;
+  width: 100%;
+  max-width: 210mm;
+  min-height: 297mm;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 18mm 20mm;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.08), 0 1px 2px -1px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.a4-sheet-landscape {
+  background: #ffffff;
+  width: 100%;
+  max-width: 297mm;
+  min-height: 210mm;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15mm 18mm;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.08), 0 1px 2px -1px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+/* Official Document Table Styling */
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.doc-table th {
+  background-color: #f1f5f9;
+  color: #0f172a;
+  font-weight: 600;
+  text-align: left;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+}
+
+.doc-table td {
+  padding: 7px 10px;
+  border: 1px solid #cbd5e1;
+  vertical-align: top;
+  color: #1e293b;
+}
+
+.doc-table tr:nth-child(even) td {
+  background-color: #fcfcfd;
+}
+
+.doc-table td[contenteditable="true"]:focus {
+  outline: 2px solid #1d4ed8;
+  outline-offset: -2px;
+  background-color: #eff6ff;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .a4-sheet,
+  .a4-sheet-landscape {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .doc-table th {
+    background-color: #f1f5f9 !important;
+    border: 1px solid #334155 !important;
+    color: #000000 !important;
+  }
+
+  .doc-table td {
+    border: 1px solid #334155 !important;
+    color: #000000 !important;
+  }
+}
+

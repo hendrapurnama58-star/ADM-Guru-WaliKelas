@@ -1,0 +1,6 @@
+{
+  "name": "Perangkat Administrasi Wali Kelas V - SDN 2 Bojong",
+  "description": "Aplikasi Perangkat Administrasi Wali Kelas V (Fase C) Kurikulum Merdeka Tahun Pelajaran 2026/2027 SDN 2 Bojong — Siap Cetak A4 & Salin ke Word/Canva.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
